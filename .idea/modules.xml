@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/DnDStatsTracker.iml" filepath="$PROJECT_DIR$/DnDStatsTracker.iml" />
+      <module fileurl="file://$PROJECT_DIR$/DnDapp.iml" filepath="$PROJECT_DIR$/DnDapp.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>
