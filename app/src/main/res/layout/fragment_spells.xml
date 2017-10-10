@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:id="@+id/firstLevelLayout"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_weight="1">
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/editText"
+            android:inputType="none"
+            android:textSize="20dp"
+            android:text="1st Level Spells"
+            android:textAlignment="gravity"
+            android:layout_gravity="left|top"
+            android:layout_margin="5dp"
+            android:enabled="false"
+            android:focusable="false"/>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:layout_margin="5dp">
+
+            <CheckBox
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:id="@+id/checkBox"
+                android:layout_column="0"
+                android:layout_row="0"
+                android:layout_margin="5dp"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:layout_weight="1" />
+
+            <CheckBox
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:id="@+id/checkBox2"
+                android:layout_column="1"
+                android:layout_row="0"
+                android:layout_margin="5dp"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:layout_weight="1" />
+
+            <CheckBox
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:id="@+id/checkBox3"
+                android:layout_column="2"
+                android:layout_row="0"
+                android:layout_margin="5dp"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:layout_weight="1" />
+
+            <CheckBox
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:id="@+id/checkBox4"
+                android:layout_column="3"
+                android:layout_row="0"
+                android:layout_margin="5dp"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:layout_weight="1" />
+
+            <CheckBox
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:id="@+id/checkBox5"
+                android:layout_column="4"
+                android:layout_row="0"
+                android:layout_margin="5dp"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:layout_weight="1"
+                android:checked="false" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:id="@+id/secondLevelLayout"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_weight="1">
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/editText2"
+            android:inputType="none"
+            android:textSize="20dp"
+            android:text="2nd Level Spells"
+            android:textAlignment="gravity"
+            android:layout_gravity="left|top"
+            android:layout_margin="5dp"
+            android:enabled="false"
+            android:focusable="false"/>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:layout_margin="5dp" >
+
+            <CheckBox
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:id="@+id/checkBox6"
+                android:layout_column="0"
+                android:layout_row="0"
+                android:layout_margin="5dp"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:layout_weight="1" />
+
+            <CheckBox
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:id="@+id/checkBox7"
+                android:layout_column="1"
+                android:layout_row="0"
+                android:layout_margin="5dp"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:layout_weight="1" />
+
+            <CheckBox
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:id="@+id/checkBox8"
+                android:layout_column="2"
+                android:layout_row="0"
+                android:layout_margin="5dp"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:layout_weight="1" />
+
+            <CheckBox
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:id="@+id/checkBox9"
+                android:layout_column="3"
+                android:layout_row="0"
+                android:layout_margin="5dp"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:layout_weight="1" />
+
+            <CheckBox
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:id="@+id/checkBox10"
+                android:layout_column="4"
+                android:layout_row="0"
+                android:layout_margin="5dp"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:layout_weight="1"
+                android:checked="false" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:id="@+id/thirdLevelLayout"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_weight="1">
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/editText3"
+            android:textSize="20dp"
+            android:text="3rd Level Spells"
+            android:textAlignment="gravity"
+            android:layout_gravity="left|top"
+            android:layout_margin="5dp"
+            android:enabled="false"
+            android:focusable="false"/>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:layout_margin="5dp" >
+
+            <CheckBox
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:id="@+id/checkBox11"
+                android:layout_column="0"
+                android:layout_row="0"
+                android:layout_margin="5dp"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:layout_weight="1" />
+
+            <CheckBox
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:id="@+id/checkBox12"
+                android:layout_column="1"
+                android:layout_row="0"
+                android:layout_margin="5dp"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:layout_weight="1" />
+
+            <CheckBox
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:id="@+id/checkBox13"
+                android:layout_column="2"
+                android:layout_row="0"
+                android:layout_margin="5dp"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:layout_weight="1" />
+
+            <CheckBox
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:id="@+id/checkBox14"
+                android:layout_column="3"
+                android:layout_row="0"
+                android:layout_margin="5dp"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:layout_weight="1" />
+
+            <CheckBox
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:id="@+id/checkBox15"
+                android:layout_column="4"
+                android:layout_row="0"
+                android:layout_margin="5dp"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:layout_weight="1"
+                android:checked="false" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <Button
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:text="Reset Spell Slots"
+        android:id="@+id/button"
+        android:layout_weight="1.25"
+        android:textAlignment="gravity"
+        android:gravity="center"
+        android:textSize="20dp"
+        android:background="#ae12ec" />
+</LinearLayout>

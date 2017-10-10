@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+
+    <EditText
+        android:hint="Enter Character HP Here"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:inputType="numberDecimal"
+        android:maxLines="25"
+        android:ems="10"
+        android:id="@+id/healthTextBox"
+        android:layout_gravity="center"
+        android:clickable="false"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginBottom="5dp"
+        android:layout_marginTop="5dp"
+        android:layout_weight="1"
+        android:textAlignment="gravity"
+        android:gravity="center"
+        android:textSize="20dp"
+        android:scrollbars="vertical"/>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_weight="1">
+
+        <Button
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:text="+1"
+            android:id="@+id/plus1"
+            android:layout_gravity="center"
+            android:background="#57b92a"
+            android:textAlignment="gravity"
+            android:gravity="center"
+            android:layout_margin="5dp"
+            android:layout_columnWeight="1"
+            android:layout_weight="1"
+            android:textSize="20dp" />
+
+        <Button
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:text="+5"
+            android:id="@+id/plus5"
+            android:layout_gravity="center"
+            android:background="#57b92a"
+            android:textAlignment="gravity"
+            android:gravity="center"
+            android:layout_margin="5dp"
+            android:layout_columnWeight="1"
+            android:layout_weight="1"
+            android:textSize="20dp" />
+
+        <Button
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:text="+10"
+            android:id="@+id/plus10"
+            android:layout_gravity="center"
+            android:background="#57b92a"
+            android:textAlignment="gravity"
+            android:gravity="center"
+            android:layout_margin="5dp"
+            android:layout_columnWeight="1"
+            android:layout_weight="1"
+            android:textSize="20dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_weight="1">
+
+        <Button
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:text="-1"
+            android:textAlignment="gravity"
+            android:id="@+id/minus1"
+            android:layout_gravity="center"
+            android:background="#eb1219"
+            android:gravity="center"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:textSize="20dp" />
+
+        <Button
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:text="-5"
+            android:id="@+id/minus5"
+            android:layout_gravity="center"
+            android:background="#eb1219"
+            android:textAlignment="gravity"
+            android:gravity="center"
+            android:layout_margin="5dp"
+            android:layout_columnWeight="1"
+            android:layout_weight="1"
+            android:textSize="20dp"
+            android:elevation="0dp" />
+
+        <Button
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:text="-10"
+            android:id="@+id/minus10"
+            android:layout_gravity="center"
+            android:background="#eb1219"
+            android:textAlignment="gravity"
+            android:gravity="center"
+            android:layout_margin="5dp"
+            android:layout_columnWeight="1"
+            android:layout_weight="1"
+            android:textSize="20dp" />
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/viewHealthLog"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:background="@android:color/background_dark"
+        android:text="View Health Log"
+        android:textSize="20dp"
+        android:textAllCaps="false"
+        android:textColor="@android:color/background_light"
+        />
+
+</LinearLayout>
