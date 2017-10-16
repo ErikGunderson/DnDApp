@@ -1,8 +1,12 @@
 package com.gundersonstudios.dndstatstracker.base;
 
 
-public interface IConvertibleVariable {
-    void convertToString();
+public interface IConvertibleVariable<T> {
+    void convertToString(StringBuilder builder);
 
-    String convertFromString();
+    void convertFromString(String source);
+
+    T getVariable();
+
+    void setVariable(T variable);
 }

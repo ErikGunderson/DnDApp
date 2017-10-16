@@ -1,4 +1,4 @@
-package com.gundersonstudios.dndstatstracker;
+package com.gundersonstudios.dndstatstracker.activity;
 
 import android.content.Context;
 import android.os.Bundle;
@@ -15,7 +15,12 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-public class StatsHome extends AppCompatActivity {
+import com.gundersonstudios.dndstatstracker.R;
+import com.gundersonstudios.dndstatstracker.model.DependencyRepository;
+import com.gundersonstudios.dndstatstracker.presenter.HealthFragmentPresenter;
+import com.gundersonstudios.dndstatstracker.presenter.SpellsFragmentPresenter;
+
+public class MainCharacterSheetActivity extends AppCompatActivity {
 
     /**
      * The {@link android.support.v4.view.PagerAdapter} that will provide
@@ -39,6 +44,9 @@ public class StatsHome extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_stats_home);
 
+        context = getApplicationContext();
+        DependencyRepository.initDependencyRepository();
+
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         // Create the adapter that will return a fragment for each of the three
@@ -48,19 +56,6 @@ public class StatsHome extends AppCompatActivity {
         // Set up the ViewPager with the sections adapter.
         mViewPager = (ViewPager) findViewById(R.id.container);
         mViewPager.setAdapter(mSectionsPagerAdapter);
-
-        context = getApplicationContext();
-
-//
-//      FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-//      fab.setOnClickListener(new View.OnClickListener() {
-//          @Override
-//          public void onClick(View view) {
-//              Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-//                      .setAction("Action", null).show();
-//          }
-//      });
-
     }
 
 
@@ -158,12 +153,12 @@ public class StatsHome extends AppCompatActivity {
             View rootView;
             if (number == 1){
                 rootView = inflater.inflate(R.layout.fragment_health,container, false);
-                HealthFragment frag = new HealthFragment(rootView, getContext());
+                HealthFragmentPresenter frag = new HealthFragmentPresenter(rootView, getContext());
             }
 
             else if (number == 2){
                 rootView = inflater.inflate(R.layout.fragment_spells,container, false);
-                SpellsFragment frag = new SpellsFragment(rootView);
+                SpellsFragmentPresenter frag = new SpellsFragmentPresenter(rootView);
             }
 
             else {

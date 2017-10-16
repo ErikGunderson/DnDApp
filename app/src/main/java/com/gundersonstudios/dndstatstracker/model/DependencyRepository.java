@@ -1,8 +1,5 @@
 package com.gundersonstudios.dndstatstracker.model;
 
-import com.gundersonstudios.dndstatstracker.HealthFragment;
-import com.gundersonstudios.dndstatstracker.base.IConvertibleVariable;
-
 import java.util.HashMap;
 
 /**
@@ -11,21 +8,23 @@ import java.util.HashMap;
  */
 public class DependencyRepository {
 
-    private static HashMap<Class, Class> singletonMap = new HashMap();
+    private static HashMap<Class, Object> singletonMap = new HashMap<Class, Object>();
 
     /**
      * Construct the dependency repository
      */
     public DependencyRepository() {
-        //not a real singleton addition, here for reference
-        addSingleton(HealthFragment.class, IConvertibleVariable.class);
     }
 
-    private void addSingleton(Class classToAdd, Class interfaceToAdd) {
-        singletonMap.put(interfaceToAdd, classToAdd);
+    public static void initDependencyRepository() {
+        addSingleton(CoreModel.class, new CoreModel());
     }
 
-    public static Class resolveDependency(Class key) {
+    private static void addSingleton(Class classToAdd, Object objectToAdd) {
+        singletonMap.put(classToAdd, objectToAdd);
+    }
+
+    public static Object resolveDependency(Class key) {
         return singletonMap.get(key);
     }
 }

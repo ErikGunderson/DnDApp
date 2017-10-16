@@ -10,18 +10,19 @@
         android:layout_height="fill_parent"
         android:layout_weight="1">
 
-        <EditText
+        <TextView
+            android:id="@+id/editText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/editText"
-            android:inputType="none"
-            android:textSize="20dp"
-            android:text="1st Level Spells"
-            android:textAlignment="gravity"
             android:layout_gravity="left|top"
             android:layout_margin="5dp"
             android:enabled="false"
-            android:focusable="false"/>
+            android:focusable="false"
+            android:inputType="none"
+            android:text="1st Level Spells"
+            android:textAlignment="gravity"
+            android:textColor="@android:color/black"
+            android:textSize="20dp" />
 
         <LinearLayout
             android:orientation="horizontal"
@@ -86,37 +87,6 @@
                 android:layout_weight="1"
                 android:checked="false" />
 
-        </LinearLayout>
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:orientation="vertical"
-        android:id="@+id/secondLevelLayout"
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:layout_weight="1">
-
-        <EditText
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/editText2"
-            android:inputType="none"
-            android:textSize="20dp"
-            android:text="2nd Level Spells"
-            android:textAlignment="gravity"
-            android:layout_gravity="left|top"
-            android:layout_margin="5dp"
-            android:enabled="false"
-            android:focusable="false"/>
-
-        <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
-            android:layout_weight="1"
-            android:layout_margin="5dp" >
-
             <CheckBox
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
@@ -138,6 +108,37 @@
                 android:layout_gravity="center"
                 android:gravity="center"
                 android:layout_weight="1" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:id="@+id/secondLevelLayout"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_weight="1">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/editText2"
+            android:inputType="none"
+            android:textSize="20dp"
+            android:text="2nd Level Spells"
+            android:textAlignment="gravity"
+            android:layout_gravity="left|top"
+            android:layout_margin="5dp"
+            android:enabled="false"
+            android:focusable="false"
+            android:textColor="@android:color/black"/>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:layout_margin="5dp" >
 
             <CheckBox
                 android:layout_width="fill_parent"
@@ -172,34 +173,6 @@
                 android:gravity="center"
                 android:layout_weight="1"
                 android:checked="false" />
-        </LinearLayout>
-    </LinearLayout>
-
-    <LinearLayout
-        android:orientation="vertical"
-        android:id="@+id/thirdLevelLayout"
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:layout_weight="1">
-
-        <EditText
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/editText3"
-            android:textSize="20dp"
-            android:text="3rd Level Spells"
-            android:textAlignment="gravity"
-            android:layout_gravity="left|top"
-            android:layout_margin="5dp"
-            android:enabled="false"
-            android:focusable="false"/>
-
-        <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
-            android:layout_weight="1"
-            android:layout_margin="5dp" >
 
             <CheckBox
                 android:layout_width="fill_parent"
@@ -245,6 +218,36 @@
                 android:gravity="center"
                 android:layout_weight="1" />
 
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:id="@+id/thirdLevelLayout"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_weight="1">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/editText3"
+            android:textSize="20dp"
+            android:text="3rd Level Spells"
+            android:textAlignment="gravity"
+            android:layout_gravity="left|top"
+            android:layout_margin="5dp"
+            android:enabled="false"
+            android:focusable="false"
+            android:textColor="@android:color/black"/>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:layout_margin="5dp" >
+
             <CheckBox
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
@@ -256,6 +259,79 @@
                 android:gravity="center"
                 android:layout_weight="1"
                 android:checked="false" />
+
+            <CheckBox
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:id="@+id/checkBox16"
+                android:layout_column="4"
+                android:layout_row="0"
+                android:layout_margin="5dp"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:layout_weight="1"
+                android:checked="false" />
+
+            <CheckBox
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:id="@+id/checkBox17"
+                android:layout_column="4"
+                android:layout_row="0"
+                android:layout_margin="5dp"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:layout_weight="1"
+                android:checked="false" />
+
+            <CheckBox
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:id="@+id/checkBox18"
+                android:layout_column="4"
+                android:layout_row="0"
+                android:layout_margin="5dp"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:layout_weight="1"
+                android:checked="false" />
+
+            <CheckBox
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:id="@+id/checkBox19"
+                android:layout_column="4"
+                android:layout_row="0"
+                android:layout_margin="5dp"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:layout_weight="1"
+                android:checked="false" />
+
+            <CheckBox
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:id="@+id/checkBox20"
+                android:layout_column="4"
+                android:layout_row="0"
+                android:layout_margin="5dp"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:layout_weight="1"
+                android:checked="false" />
+
+            <CheckBox
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:id="@+id/checkBox21"
+                android:layout_column="4"
+                android:layout_row="0"
+                android:layout_margin="5dp"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:layout_weight="1"
+                android:checked="false" />
+
         </LinearLayout>
     </LinearLayout>
 
@@ -268,5 +344,6 @@
         android:textAlignment="gravity"
         android:gravity="center"
         android:textSize="20dp"
-        android:background="#ae12ec" />
+        android:background="#ae12ec"
+        android:layout_margin="5dp"/>
 </LinearLayout>
