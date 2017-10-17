@@ -2,4 +2,9 @@
     <string name="app_name">DnD Stats Tracker</string>
     <string name="action_settings">Settings</string>
     <string name="section_format">Hello World from section: %1$d</string>
+
+    <string name="current_health"><u>Current Health</u></string>
+    <string name="total_health"><u>Total Health</u></string>
+    <string name="nonlethal_damage"><u>Nonlethal Damage</u></string>
+    <string name="damage_reduction"><u>Damage Resistance</u></string>
 </resources>

@@ -1,7 +1,7 @@
 package com.gundersonstudios.dndstatstracker.fragment;
 
-import android.app.Fragment;
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,6 +10,7 @@ import android.widget.CheckBox;
 import android.widget.CompoundButton;
 
 import com.gundersonstudios.dndstatstracker.R;
+import com.gundersonstudios.dndstatstracker.base.IStatFragment;
 import com.gundersonstudios.dndstatstracker.model.CoreModel;
 import com.gundersonstudios.dndstatstracker.model.DependencyRepository;
 import com.gundersonstudios.dndstatstracker.presenter.SpellsFragmentPresenter;
@@ -18,11 +19,12 @@ import com.gundersonstudios.dndstatstracker.utils.Constants;
 import java.util.ArrayList;
 import java.util.List;
 
-public class SpellsFragment extends Fragment {
+public class SpellsFragment extends Fragment implements IStatFragment{
     private SpellsFragmentPresenter mPresenter;
     private View mFragmentView;
     public int mFragmentSectionNumber;
     private List<CheckBox> mCheckboxes;
+    private String mName = "Character Spell Stats";
 
     public SpellsFragment() {
     }
@@ -105,5 +107,15 @@ public class SpellsFragment extends Fragment {
 
     private void spellWasUncast(int index) {
         mPresenter.spellWasUncast(index);
+    }
+
+    @Override
+    public String getFragmentName() {
+        return mName;
+    }
+
+    @Override
+    public Fragment getFragment() {
+        return this;
     }
 }

@@ -1,6 +1,6 @@
 package com.gundersonstudios.dndstatstracker.presenter;
 
-import android.app.Fragment;
+import android.support.v4.app.Fragment;
 
 import com.gundersonstudios.dndstatstracker.model.CoreModel;
 import com.gundersonstudios.dndstatstracker.utils.Constants;

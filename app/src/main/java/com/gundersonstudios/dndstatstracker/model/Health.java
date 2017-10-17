@@ -54,6 +54,14 @@ public class Health implements IConvertible{
         nonlethalDamage += amountToAdd;
     }
 
+    public void addAmountToDamageResistance(int amountToAdd) {
+        damageResistance += amountToAdd;
+    }
+
+    public void addAmountToTotalHealth(int amountToAdd) {
+        totalHealth += amountToAdd;
+    }
+
     @Override
     public void sendToFile(JSONObject jsonObject) {
         try {
