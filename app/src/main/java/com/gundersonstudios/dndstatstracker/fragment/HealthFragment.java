@@ -1,5 +1,6 @@
 package com.gundersonstudios.dndstatstracker.fragment;
 
+import android.content.Context;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -9,6 +10,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 
@@ -56,16 +58,18 @@ public class HealthFragment extends Fragment implements IStatFragment {
             public void afterTextChanged(Editable editable) {
                 if(editable.length() != 0) {
                     setTotalHealth(Integer.valueOf(editable.toString()));
-                    totalHealth.setEnabled(false);
-                } else {
-                    totalHealth.setEnabled(true);
+                    setEditTextFilled(totalHealth);
                 }
+                InputMethodManager imm = (InputMethodManager) getActivity().getSystemService(Context.INPUT_METHOD_SERVICE);
+                imm.hideSoftInputFromWindow(totalHealth.getWindowToken(), 0);
             }
         });
         totalHealth.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                selectNewButton(view);
+                if (((EditText) view).getText().length() != 0) {
+                    selectNewButton(view);
+                }
             }
         });
 
@@ -83,10 +87,10 @@ public class HealthFragment extends Fragment implements IStatFragment {
             public void afterTextChanged(Editable editable) {
                 if(editable.length() != 0) {
                     setDamageResistance(Integer.valueOf(editable.toString()));
-                    damageResistance.setEnabled(false);
-                } else {
-                    damageResistance.setEnabled(true);
+                    setEditTextFilled(damageResistance);
                 }
+                InputMethodManager imm = (InputMethodManager) getActivity().getSystemService(Context.INPUT_METHOD_SERVICE);
+                imm.hideSoftInputFromWindow(totalHealth.getWindowToken(), 0);
             }
         });
         damageResistance.setOnClickListener(new View.OnClickListener() {
@@ -110,10 +114,10 @@ public class HealthFragment extends Fragment implements IStatFragment {
             public void afterTextChanged(Editable editable) {
                 if(editable.length() != 0) {
                     setCurrentHealth(Integer.valueOf(editable.toString()));
-                    healthTextBox.setEnabled(false);
-                } else {
-                    healthTextBox.setEnabled(true);
+                    setEditTextFilled(healthTextBox);
                 }
+                InputMethodManager imm = (InputMethodManager) getActivity().getSystemService(Context.INPUT_METHOD_SERVICE);
+                imm.hideSoftInputFromWindow(totalHealth.getWindowToken(), 0);
             }
         });
         healthTextBox.setOnClickListener(new View.OnClickListener() {
@@ -137,10 +141,10 @@ public class HealthFragment extends Fragment implements IStatFragment {
             public void afterTextChanged(Editable editable) {
                 if(editable.length() != 0) {
                     setNonlethalDamage(Integer.valueOf(editable.toString()));
-                    nonlethalDamage.setEnabled(false);
-                } else {
-                    nonlethalDamage.setEnabled(true);
+                    setEditTextFilled(nonlethalDamage);
                 }
+                InputMethodManager imm = (InputMethodManager) getActivity().getSystemService(Context.INPUT_METHOD_SERVICE);
+                imm.hideSoftInputFromWindow(totalHealth.getWindowToken(), 0);
             }
         });
         nonlethalDamage.setOnClickListener(new View.OnClickListener() {
@@ -232,34 +236,36 @@ public class HealthFragment extends Fragment implements IStatFragment {
     }
 
     public void selectNewButton(View nextSelectedView) {
-        nextSelectedView.setBackgroundColor(Color.GRAY);
-        nextSelectedView.setAlpha(.5f);
+        if (nextSelectedView != currentViewSelected) {
+            nextSelectedView.setBackgroundColor(Color.CYAN);
+            nextSelectedView.setAlpha(.3f);
 
-        if (currentViewSelected != null) {
-            currentViewSelected.setBackgroundColor(Color.WHITE);
-            currentViewSelected.setAlpha(1);
+            if (currentViewSelected != null) {
+                currentViewSelected.setBackgroundColor(Color.TRANSPARENT);
+                currentViewSelected.setAlpha(1);
+            }
+
+            currentViewSelected = nextSelectedView;
         }
-
-        currentViewSelected = nextSelectedView;
     }
 
     public void addAmountToVariable(int amount) {
         switch(currentViewSelected.getId()) {
             case R.id.totalHp:
                 addAmountToTotalHealth(amount);
-                ((EditText) currentViewSelected).setText(mPresenter.getTotalHealth());
+                ((EditText) currentViewSelected).setText(String.valueOf(mPresenter.getTotalHealth()));
                 break;
             case R.id.currentHp:
                 addAmountToCurrentHealth(amount);
-                ((EditText) currentViewSelected).setText(mPresenter.getCurrentHealth());
+                ((EditText) currentViewSelected).setText(String.valueOf(mPresenter.getCurrentHealth()));
                 break;
             case R.id.nonlethalDamage:
                 addAmountToNonlethalDamage(amount);
-                ((EditText) currentViewSelected).setText(mPresenter.getNonlethalDamage());
+                ((EditText) currentViewSelected).setText(String.valueOf(mPresenter.getNonlethalDamage()));
                 break;
             case R.id.damageResistance:
                 addAmountToDamageResistance(amount);
-                ((EditText) currentViewSelected).setText(mPresenter.getDamageResistance());
+                ((EditText) currentViewSelected).setText(String.valueOf(mPresenter.getDamageResistance()));
                 break;
             default:
                 Log.e(HealthFragment.class.getSimpleName(), "No attribute selected to have an amount added to");
@@ -274,5 +280,11 @@ public class HealthFragment extends Fragment implements IStatFragment {
     @Override
     public Fragment getFragment() {
         return this;
+    }
+
+    public void setEditTextFilled(View view) {
+        view.setFocusable(false);
+        view.setClickable(true);
+        view.setLongClickable(false);
     }
 }

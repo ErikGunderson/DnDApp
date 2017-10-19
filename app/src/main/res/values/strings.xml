@@ -7,4 +7,7 @@
     <string name="total_health"><u>Total Health</u></string>
     <string name="nonlethal_damage"><u>Nonlethal Damage</u></string>
     <string name="damage_reduction"><u>Damage Resistance</u></string>
+
+    <string name="add_health_frag">Add Health Tab</string>
+    <string name="add_spells_frag">Add Spells Tab</string>
 </resources>
