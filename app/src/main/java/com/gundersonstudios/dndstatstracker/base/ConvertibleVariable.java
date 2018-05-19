@@ -1,5 +1,9 @@
 package com.gundersonstudios.dndstatstracker.base;
 
+/**
+ * Unused
+ * @param <T>
+ */
 public class ConvertibleVariable<T> implements IConvertibleVariable {
     private T mVariable;
     private String mName;

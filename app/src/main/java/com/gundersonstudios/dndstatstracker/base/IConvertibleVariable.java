@@ -1,6 +1,9 @@
 package com.gundersonstudios.dndstatstracker.base;
 
-
+/**
+ * Unused
+ * @param <T>
+ */
 public interface IConvertibleVariable<T> {
     void convertToString(StringBuilder builder);
 

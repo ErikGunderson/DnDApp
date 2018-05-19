@@ -29,4 +29,19 @@ public class CoreModel implements IConvertible{
         mHealth.getFromFile(jsonObject);
         mSpellsPerDay.getFromFile(jsonObject);
     }
+
+    public IConvertible getCoreModelSlice(CoreModelSlice modelSlice) {
+        switch(modelSlice) {
+            case AbilityScores:
+                return mAbilityScores;
+            case BardicPerformance:
+                return null;
+            case Health:
+                return mHealth;
+            case SpellsPerDay:
+                return mSpellsPerDay;
+            default:
+                return null;
+        }
+    }
 }
