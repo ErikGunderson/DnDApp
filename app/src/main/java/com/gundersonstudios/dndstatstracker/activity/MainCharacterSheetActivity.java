@@ -20,15 +20,20 @@ import com.gundersonstudios.dndstatstracker.R;
 import com.gundersonstudios.dndstatstracker.base.IStatFragment;
 import com.gundersonstudios.dndstatstracker.fragment.HealthFragment;
 import com.gundersonstudios.dndstatstracker.fragment.SpellsFragment;
+import com.gundersonstudios.dndstatstracker.model.CoreModel;
 import com.gundersonstudios.dndstatstracker.model.DependencyRepository;
 import com.gundersonstudios.dndstatstracker.presenter.HealthFragmentPresenter;
 import com.gundersonstudios.dndstatstracker.presenter.SpellsFragmentPresenter;
 import com.gundersonstudios.dndstatstracker.utils.Constants;
+import com.gundersonstudios.dndstatstracker.utils.FileManager;
+
+import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import static android.R.attr.fragment;
+import static com.gundersonstudios.dndstatstracker.model.DependencyRepository.resolveDependency;
 
 public class MainCharacterSheetActivity extends AppCompatActivity {
 
@@ -66,6 +71,10 @@ public class MainCharacterSheetActivity extends AppCompatActivity {
         // Set up the ViewPager with the sections adapter.
         mViewPager = (ViewPager) findViewById(R.id.container);
         mViewPager.setAdapter(mSectionsPagerAdapter);
+
+        FileManager fileManager = new FileManager();
+
+        JSONObject object = fileManager.readFromFile("TestFile", this);
     }
 
 
@@ -158,5 +167,18 @@ public class MainCharacterSheetActivity extends AppCompatActivity {
         Fragment fragment = new SpellsFragment();
         fragment.setArguments(args);
         fragmentList.add((IStatFragment) fragment);
+    }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+
+        JSONObject object = new JSONObject();
+        CoreModel coreModel = (CoreModel) DependencyRepository.resolveDependency(CoreModel.class);
+        coreModel.sendToFile(object);
+
+        //output json object to file
+        FileManager fileManager = new FileManager();
+        fileManager.writeToFile("TestFile", this, object);
     }
 }
